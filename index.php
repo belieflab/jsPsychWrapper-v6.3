@@ -7,7 +7,7 @@ require_once 'db/config.php';
 <html>
 
 <head>
-  <title>Bistable Perception</title>
+  <title>jsPsych Template</title>
   <script>
     //onbeforeunload in body
     function areYouSure() {
