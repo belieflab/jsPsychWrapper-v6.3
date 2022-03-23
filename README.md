@@ -1,4 +1,4 @@
-# Bistable Perception
+# jsPsych Template v6.3
 
 ## Development Guide
 
