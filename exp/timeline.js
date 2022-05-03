@@ -33,7 +33,8 @@ let dataSave = {
     document.getElementById("unload").onbeforeunload = ''; //removes popup (are you sure you want to exit) since data is saved now
     // returns cursor functionality
     $(document).ready(function () {
-      $("body").addClass("showCursor");
+      $("body").addClass("showCursor"); // returns cursor functionality
+      closeFullscreen(); // kill fullscreen
     });
   }
 };
