@@ -3,6 +3,9 @@ function startExperiment() {
   jsPsych.init({
     timeline: timeline,
     show_progress_bar: true,
+    preload_video: [],
+    preload_audio: [],
+    preload_images: [],
   });
 }
 
