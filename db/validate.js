@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // jsPsych API for NDA variables
 
@@ -13,35 +13,41 @@ let HardKey_uCase;
 
 // assign date, assoc vars
 let today = new Date();
-let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let dd = String(today.getDate()).padStart(2, "0");
+let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
 let yyyy = today.getFullYear();
-today = mm + '/' + dd + '/' + yyyy;
-let todayStandard = yyyy + '-' + mm + '-' + dd;
+today = mm + "/" + dd + "/" + yyyy;
+let todayStandard = yyyy + "-" + mm + "-" + dd;
 
 /* Get the documentElement (<html>) to display the page in fullscreen */
 const elem = document.documentElement;
-const screenResolutionHeight = screen.height
+const screenResolutionHeight = screen.height;
 
 /* View in fullscreen */
 function openFullscreen() {
-  if (elem.requestFullscreen) { /* Chrome, Firefox */
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
+    if (elem.requestFullscreen) {
+        /* Chrome, Firefox */
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        /* IE11 */
+        elem.msRequestFullscreen();
+    }
 }
 
 /* Close fullscreen */
 function closeFullscreen() {
-    if (document.exitFullscreen) { /* Chrome, Firefox */
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) { /* Safari */
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE11 */
-      document.msExitFullscreen();
+    if (document.exitFullscreen) {
+        /* Chrome, Firefox */
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        /* IE11 */
+        document.msExitFullscreen();
     }
 }
 
@@ -70,7 +76,10 @@ function validateIntake() {
 }
 
 function validateHandedness() {
-    if (document.getElementById("rightHanded").checked === false && document.getElementById("leftHanded").checked === false) {
+    if (
+        document.getElementById("rightHanded").checked === false &&
+        document.getElementById("leftHanded").checked === false
+    ) {
         alert("Please select your dominant hand.");
     }
 }
@@ -86,7 +95,6 @@ function validateFullscreen() {
         alert("Please confirm your browser window is in full screen");
     }
 }
-
 
 // function validateHeadphones() {
 //     if (document.getElementById("headphones").checked === false) {
@@ -104,7 +112,7 @@ function validateFullscreen() {
 // this is useful for development environments and running the task on a standalone web server with no omnibus integration
 
 function validateSubject() {
-    if (document.getElementById("subjectid").value !== '') {
+    if (document.getElementById("subjectid").value !== "") {
         subjectID = subjectid.value;
     } else {
         alert("Please enter a valid subject id.");
@@ -124,37 +132,39 @@ function validateSex() {
 function validateSite() {
     let siteID = document.getElementById("siteid");
 
-    if (document.getElementById("siteid").value === 'none') {
-        alert('Please select a valid research site by refreshing the page.\nIf your site is not listed, you may proceed anyway.\nHowever, your site will not be recorded in the datafile.\nTo add your site to this list, please contact: joshua.kenney@yale.edu');
+    if (document.getElementById("siteid").value === "none") {
+        alert(
+            "Please select a valid research site by refreshing the page.\nIf your site is not listed, you may proceed anyway.\nHowever, your site will not be recorded in the datafile.\nTo add your site to this list, please contact: joshua.kenney@yale.edu"
+        );
     }
 
     // const zeroPad = (num, places) => String(num).padStart(places, '0');
     switch (siteID.options[siteID.selectedIndex].value) {
         case "Maryland":
-            siteNumber = 'UMBC';
+            siteNumber = "UMBC";
             break;
         case "Northwestern":
-            siteNumber = 'NU';
+            siteNumber = "NU";
             break;
         case "Temple":
-            siteNumber = 'Temple';
+            siteNumber = "Temple";
             break;
         case "Georgia":
-            siteNumber = 'UGA';
+            siteNumber = "UGA";
             break;
         case "Yale":
-            siteNumber = 'Yale';
+            siteNumber = "Yale";
             break;
         case "Emory":
-            siteNumber = 'Emory';
+            siteNumber = "Emory";
             break;
         default:
-            siteNumber = '';
+            siteNumber = "";
     }
 }
 
 function validateGUID() {
-    if (document.getElementById("guid").value !== '') {
+    if (document.getElementById("guid").value !== "") {
         GUID = guid.value;
     } else {
         alert("Please enter the GUID provided to you by the researcher.");
@@ -162,29 +172,26 @@ function validateGUID() {
 }
 
 function validateAge() {
-    if (document.getElementById("dob").value !== '') {
+    if (document.getElementById("dob").value !== "") {
         let DOB = dob.value;
         let DOByyyy = DOB.slice(0, 4);
         let DOBmm = DOB.slice(5, 7);
         // let DOBdd = DOB.slice(8, 10);
-        let ageInMonths = ((yyyy * 12) - (DOByyyy * 12) + (mm - DOBmm));
+        let ageInMonths = yyyy * 12 - DOByyyy * 12 + (mm - DOBmm);
         ageAtAssessment = parseInt(ageInMonths);
     } else {
         alert("Please enter your date of birth.");
     }
-
 }
 
 // this function runs when the submit button is pressed
 
 function submitIntake() {
-
     if (screenResolutionHeight > 768) {
         openFullscreen();
 
         let rightHandedness = document.getElementById("rightHanded").checked;
         let leftHandedness = document.getElementById("leftHanded").checked;
-
 
         if (rightHandedness === true) {
             handedness = "right";
@@ -194,16 +201,19 @@ function submitIntake() {
             antihandedness = "right";
         }
 
-        if (document.getElementById("brightness").checked === false || document.getElementById("fullscreen").checked === false /*|| document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false*/ ) {
+        if (
+            document.getElementById("brightness").checked ===
+            false /*|| document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false*/
+        ) {
             // do nothing
         } else {
             // alert("your subjectid is " + subjectID);
             // workerId = parseInt(subjectID);
             validateIntake();
         }
-
     } else {
-        alert("Your screen resolution is too low to view the experiment correctly.\nYour experimenter can help you increase your screen resolution.\nThank you!")
+        alert(
+            "Your screen resolution is too low to view the experiment correctly.\nYour experimenter can help you increase your screen resolution.\nThank you!"
+        );
     }
-
 }
