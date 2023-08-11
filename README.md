@@ -26,7 +26,7 @@
 #### Modifty permissions:
 8. Copy this text into your terminal from the htdocs folder (the folder you are already in).
 
-        sudo chmod -R 777 pessiglionne/
+        chmod -R 777 pessiglionne/
         
 #### Start experiment:     
 9. Click this URL: [http://localhost:8080/pessiglionne](http://localhost:8080/pessiglionne)
