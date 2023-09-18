@@ -45,7 +45,7 @@
       <br><br>
       <u><b>Economic Considerations</b></u>
       <br>
-      You will receive the reward specified on the Mechanical-Turk HIT for completing both the game and the questionnaire. Payment for completion of the HIT is $6.00 with up to a $2.00 bonus based on task performance and a further $40 bonus to individuals who score in the top 1%. Upon finishing the game and submitting the questionnaire, you will receive code numbers. Please record these two code numbers and submit them for payment. 
+      You will receive the reward specified on the Mechanical-Turk HIT for completing both the game and the questionnaire. Payment for completion of the HIT is $6.00 USD. Upon finishing the game and submitting the questionnaire, you will receive a completion code number. Please record this completion code and submit it for payment.
       <br><br>
       <u><b>Confidentiality</b></u>
       <br>
