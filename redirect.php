@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Bistable Perception</title>
+  <title>Experiment Title</title>
   <script>
     //onbeforeunload in body
     function areYouSure() {
