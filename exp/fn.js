@@ -46,7 +46,7 @@ function getParamFromURL(name) {
 }
 
 // Translate consent button
-function translate() {
+function translate(language) {
   let consent;
   let load;
   switch (language) {
@@ -68,6 +68,6 @@ function translate() {
 
   }
 
-  document.getElementById('submitButton').innerHTML = consent;
-  document.getElementById('nextButton').innerHTML = load;
+  // document.getElementById('submitButton').innerHTML = consent;
+  // document.getElementById('nextButton').innerHTML = load;
 }
