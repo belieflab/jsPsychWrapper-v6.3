@@ -16,7 +16,9 @@ require_once 'db/config.php';
     areYouSure();
   </script>
   <!-- set js language variable from php variable in config.php -->
-  
+  <script>
+    const language = "<?php echo $language; ?>";
+  </script>
   <script type="text/javascript" src="db/validate.js"></script>
   <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="jsPsych/jspsych.js"></script>

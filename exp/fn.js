@@ -1,5 +1,6 @@
 /* start the experiment */
 function startExperiment() {
+  openFullscreen();
   jsPsych.init({
     timeline: timeline,
     show_progress_bar: true,
@@ -46,7 +47,7 @@ function getParamFromURL(name) {
 }
 
 // Translate consent button
-function translate(language) {
+function translate() {
   let consent;
   let load;
   switch (language) {
@@ -68,6 +69,6 @@ function translate(language) {
 
   }
 
-  // document.getElementById('submitButton').innerHTML = consent;
-  // document.getElementById('nextButton').innerHTML = load;
+  document.getElementById('submitButton').innerHTML = consent;
+  document.getElementById('nextButton').innerHTML = load;
 }
