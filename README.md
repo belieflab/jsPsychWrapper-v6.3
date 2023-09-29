@@ -21,15 +21,15 @@
 
 7. Clone into htdocs:
 
-        git clone https://github.com/belieflab/pessiglionne.git
+        git clone https://github.com/belieflab/jsPsychWrapper-v6.3.git
 
 #### Modifty permissions:
 8. Copy this text into your terminal from the htdocs folder (the folder you are already in).
 
-        chmod -R 777 pessiglionne/
+        chmod -R 777 jsPsychWrapper-v6.3/
         
 #### Start experiment:     
-9. Click this URL: [http://localhost:8080/pessiglionne](http://localhost:8080/pessiglionne)
+9. Click this URL: [http://localhost/jsPsychWrapper-v6.3](http://localhost/jsPsychWrapper-v6.3)
       
       
       
