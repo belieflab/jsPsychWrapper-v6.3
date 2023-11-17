@@ -59,19 +59,28 @@ function gitCommitHash( $branch='master' ) {
 <script type="text/javascript">
     const experimentName = "<?php echo $experimentName; ?>";
     const experimentAlias = "<?php echo $experimentAlias; ?>";
-    let workerId = "<?php echo $workerId; ?>";
-    const PROLIFIC_PID = "<?php echo $PROLIFIC_PID; ?>";
-    let src_subject_id = "<?php echo $src_subject_id; ?>";
-    let subjectId = "<?php echo $subjectId; ?>";
     const language = "<?php echo $language; ?>";
     const adminEmail = "joshua.kenney@yale.edu";
-    const feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/kamin.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
-    // these are NDA required variables which will get passed from participant portal 
-    const GUID = "<?php echo $subjectKey?>";
-    const subjectID = "<?php echo $consortId?>";
-    const sexAtBirth = "<?php echo $sexAtBirth?>";
-    const siteNumber = "<?php echo $institutionAlias?>";
-    const ageAtAssessment = "<?php echo $ageInMonths?>";
-    const groupStatus = "<?php echo $groupStatus?>";
-    const visit = "<?php echo $visit?>";
+    // these are NDA required variables which will get passed from participant portal
+    if (getParamFromURL("workerId")) {
+      alert("hola mundo")
+      const workerId = "<?php echo $workerId; ?>";
+      const subjectId = "<?php echo $workerId; ?>";
+    }
+    if (getParamFromURL("PROLIFIC_PID")) {
+      const PROLIFIC_PID = "<?php echo $PROLIFIC_PID; ?>";
+      const subjectId = "<?php echo $PROLIFIC_PID; ?>";
+    }
+    if (getParamFromURL("src_subject_id")) {
+      const src_subject_id = "<?php echo $src_subject_id; ?>";
+      const subjectId = "<?php echo $src_subject_id; ?>";
+      const GUID = "<?php echo $subjectKey?>";
+      const subjectID = "<?php echo $consortId?>";
+      const sexAtBirth = "<?php echo $sexAtBirth?>";
+      const siteNumber = "<?php echo $institutionAlias?>";
+      const ageAtAssessment = "<?php echo $ageInMonths?>";
+      const groupStatus = "<?php echo $groupStatus?>";
+      const visit = "<?php echo $visit?>";
+      const feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/kamin.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    }  
 </script>

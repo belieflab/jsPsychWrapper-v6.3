@@ -39,7 +39,7 @@ require_once 'exp/conf.php';
           include_once "include/consent/german.php";
           break;
         }
-    } else if ($_GET["src_subject_id"]) {
+    } else if (isset($_GET["src_subject_id"])) {
       include_once "include/nda.php";
     } else {
       include_once "include/intake.php";
@@ -47,8 +47,8 @@ require_once 'exp/conf.php';
   ?>
 </body>
 <footer>
-  <script type="text/javascript" src="exp/fn.js"></script>
   <script type="text/javascript" src="exp/lang.js"></script>
+  <script type="text/javascript" src="exp/fn.js"></script>
   <script type="text/javascript" src="exp/var.js"></script>
   <script>
     // show page when loaded 
