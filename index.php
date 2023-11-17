@@ -9,21 +9,12 @@ require_once 'exp/conf.php';
 <head>
   <!-- add the title of the experiment that would be seen in the browser -->
   <title><?php echo $experimentName; ?></title>
-  <script>
-    //onbeforeunload in body
-    function areYouSure() {
-      return "Write something clever here...";
-    }
-    areYouSure();
-  </script>
-  <!-- set js language variable from php variable in config.php -->
-  <script>
-    const language = "<?php echo $language; ?>";
-  </script>
+  <!-- PHP wrapper libraries -->
   <script type="text/javascript" src="db/validate.js"></script>
   <script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>
+  <!-- jsPsych library -->
   <script type="text/javascript" src="jsPsych/jspsych.js"></script>
-  <!-- add plugins that you need for your experiment -->
+  <!-- jsPsych Plugins (add more here) -->
   <script type="text/javascript" src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script>
   <script type="text/javascript" src="jsPsych/plugins/jspsych-image-keyboard-response.js"></script>
   <script type="text/javascript" src="jsPsych/plugins/jspsych-video-keyboard-response.js"></script>

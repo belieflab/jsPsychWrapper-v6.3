@@ -1,6 +1,7 @@
 <div class="screening" style="background-color:lightgray; text-align:center; margin:35px; vertical-align:middle">
 <br>
 <h1 style="text-align:center;">Participant Intake</h1>
+
 <!-- <input type="text" id="result"> -->
   <div id="intake">
     
@@ -20,7 +21,7 @@
     <label class="container">Screen brightness is up to 100% &nbsp&nbsp&nbsp&nbsp  
     <input type="checkbox" name="brightness" id="brightness" value="1"/>
     </label>
-    <br>
+
     <!-- <label class="container">Browser window is in full screen &nbsp&nbsp&nbsp&nbsp&nbsp
     <input type="checkbox" name="fullscreen" id="fullscreen" value="1"/>
     </label>
@@ -33,6 +34,7 @@
     <label class="container">Headphone volume is set to 50% &nbsp&nbsp&nbsp  
     <input type="checkbox" name="volume" id="volume" value="1"/>
   </label> -->
+
   </form>
   
   <!-- <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               
@@ -46,11 +48,14 @@
   </label>
 </form>
 <br> -->
+
 <button id="submitButton" class="btn btn-primary btn-lg loadMain" onclick="validateHandedness(), validateBrightness(), /*validateFullscreen(), validateHeadphones(), validateVolume(),*/ submitIntake()" type="button">SUBMIT</button>
 </div>
 <div id="validation" style="display: none">
     <br>
+    
     <form>
+      
 </form>
 </div>
 
