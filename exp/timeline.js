@@ -31,7 +31,7 @@ let dataSave = {
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
     on_finish: function () {
-        saveData("task_" + workerId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
+        saveData("task_" + subjectId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
         document.getElementById("unload").onbeforeunload = ""; //removes popup (are you sure you want to exit) since data is saved now
         // returns cursor functionality
         $(document).ready(function () {

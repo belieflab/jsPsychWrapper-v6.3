@@ -14,14 +14,20 @@ $language = 'english';
 // $language = 'german';
 
 // SET SUBJECT IDENTIFICATION
+// MTurk case 
 if (isset($_GET["workerId"])) {
   $workerId = $_GET["workerId"];
   $subjectId = $_GET["workerId"];
 }
-
+// Prolific case
 if (isset($_GET["PROLIFIC_PID"])) {
   $PROLIFIC_PID = $_GET["PROLIFIC_PID"];
   $subjectId = $_GET["PROLIFIC_PID"];
+}
+// Connect case
+if (isset($_GET["participantId"])) {
+  $participantId = $_GET["participantId"];
+  $subjectId = $_GET["participantId"];
 }
 
 if (isset($_GET["src_subject_id"])) {
@@ -63,13 +69,16 @@ function gitCommitHash( $branch='master' ) {
     const adminEmail = "joshua.kenney@yale.edu";
     // these are NDA required variables which will get passed from participant portal
     if (getParamFromURL("workerId")) {
-      alert("hola mundo")
       const workerId = "<?php echo $workerId; ?>";
       const subjectId = "<?php echo $workerId; ?>";
     }
     if (getParamFromURL("PROLIFIC_PID")) {
       const PROLIFIC_PID = "<?php echo $PROLIFIC_PID; ?>";
       const subjectId = "<?php echo $PROLIFIC_PID; ?>";
+    }
+    if (getParamFromURL("participantId")) {
+      const participantId = "<?php echo $participantId; ?>";
+      const subjectId = "<?php echo $participantId; ?>";
     }
     if (getParamFromURL("src_subject_id")) {
       const src_subject_id = "<?php echo $src_subject_id; ?>";
