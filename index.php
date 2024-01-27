@@ -1,5 +1,5 @@
 <?php
-require_once 'wrap/db/data.php';
+require_once 'wrap/lib/data.php';
 require_once 'wrap/exp/conf.php';
 ?>
 
@@ -10,8 +10,8 @@ require_once 'wrap/exp/conf.php';
   <!-- add the title of the experiment that would be seen in the browser -->
   <title><?php echo $experimentName; ?></title>
   <!-- PHP wrapper libraries -->
-  <script type="text/javascript" src="wrap/db/validate.js"></script>
-  <script type="text/javascript" src="wrap/db/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="wrap/lib/validate.js"></script>
+  <script type="text/javascript" src="wrap/lib/jquery-3.5.1.min.js"></script>
   <!-- jsPsych library -->
   <script type="text/javascript" src="wrap/jsPsych/jspsych.js"></script>
   <!-- jsPsych Plugins (add more here) -->

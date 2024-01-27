@@ -3,9 +3,21 @@ let timeline = [];
 let instructions0 = {
     type: "html-keyboard-response",
     stimulus:
-        "<p> Hello and thank you for taking part in our experiment!</p>" +
-        "<p>It should take about 30 minutes.</p>" +
-        "<p> <i> Press spacebar to continue</i> </p>",
+        `
+    <p>Hello!</p>
+    <p>Please edit exp/conf.php to configure the experiment.</p>
+    <p>You may set the experiment name: ` +
+        experimentName +
+        `</p>
+    <p>Experiment alias: ` +
+        experimentAlias +
+        `</p>
+    <p>And the language: ` +
+        language +
+        `</p>
+    <p>You may also set other variables as you choose.</p>
+    <p>Press Space to continue.</p>
+`,
     choices: [32],
     on_finish: function (data) {
         data.index = "lol";
@@ -14,24 +26,11 @@ let instructions0 = {
 
 let dataSave = {
     type: "html-keyboard-response",
-    stimulus:
-        "<p style='color:white;'>Data saving...</p>" +
-        '<div class="sk-cube-grid">' +
-        '<div class="sk-cube sk-cube1"></div>' +
-        '<div class="sk-cube sk-cube2"></div>' +
-        '<div class="sk-cube sk-cube3"></div>' +
-        '<div class="sk-cube sk-cube4"></div>' +
-        '<div class="sk-cube sk-cube5"></div>' +
-        '<div class="sk-cube sk-cube6"></div>' +
-        '<div class="sk-cube sk-cube7"></div>' +
-        '<div class="sk-cube sk-cube8"></div>' +
-        '<div class="sk-cube sk-cube9"></div>' +
-        "</div>" +
-        "<p style='color:white;'>Do not close this window until the text dissapears.</p>",
+    stimulus: dataSaveAnimation,
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
-    on_finish: function () {
-        saveData("task_" + subjectId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
+    on_finish: () => {
+        saveData(experimentAlias + "_" + subjectId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
         document.getElementById("unload").onbeforeunload = ""; //removes popup (are you sure you want to exit) since data is saved now
         // returns cursor functionality
         $(document).ready(function () {
