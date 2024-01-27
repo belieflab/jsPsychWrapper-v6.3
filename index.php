@@ -1,6 +1,7 @@
 <?php
 require_once 'wrap/lib/data.php';
-require_once 'wrap/exp/conf.php';
+require_once 'wrap/lib/nda.php';
+require_once 'exp/conf.php';
 ?>
 
 <!DOCTYPE html>
