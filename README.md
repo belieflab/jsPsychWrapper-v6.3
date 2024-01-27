@@ -21,15 +21,15 @@
 
 7. Clone into htdocs:
 
-        git clone https://github.com/belieflab/jsPsychWrapper-v6.3.git
+        git clone https://github.com/belieflab/wrap.git
 
 #### Modifty permissions:
 8. Copy this text into your terminal from the htdocs folder (the folder you are already in).
 
-        chmod -R 777 jsPsychWrapper-v6.3/
+        chmod -R 777 wrap/
         
 #### Start experiment:     
-9. Click this URL: [http://localhost/jsPsychWrapper-v6.3](http://localhost/jsPsychWrapper-v6.3)
+9. Click this URL: [http://localhost/wrap](http://localhost/wrap)
       
       
       
