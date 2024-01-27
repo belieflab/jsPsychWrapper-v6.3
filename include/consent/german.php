@@ -76,7 +76,7 @@
 <!-- <p id="nextButton" style="display: none" >please make sure you are in a quiet place. When you are ready to begin, click 'START'</p> -->
 <br>
 </div>
-<script type="text/javascript" src="jQuery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="jsPsychWrapper-v6.3/db/jquery-3.5.1.min.js"></script>
 <script>$("button.loadMain").click(function(){
       $.getScript("exp/timeline.js");
       // $.getScript("exp/main.js"); 
